@@ -23,9 +23,11 @@ function trimProperties(obj) {
  * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
  */
 function trimPropertiesMutation(obj) {
-  const newObj = obj[value] = obj[value].trim();
+    for (let value in obj) {
+      obj[value] = obj[value].trim();
+    }
+    return obj
 }
-
 /**
  * [Exercise 3] findLargestInteger finds the largest integer in an array of objects { integer: 1 }
  * @param {object[]} integers - an array of objects
