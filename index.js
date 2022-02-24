@@ -159,19 +159,12 @@ class Car {
   refuel(gallons) {
     
     if(this.tank < this.tankSize) {
-      this.tank += gallons
+      return this.tank += gallons
     } else {
       return this.tank
     }
   }
 }
-
-const ford = new Car('ford', 20, 30)
-ford.drive(600)
-ford.drive(1)
-ford.refuel(20)
-ford.refuel(20)
-console.log(ford)
 
 /**
  * [Exercise 7] Asynchronously resolves whether a number is even
@@ -187,7 +180,13 @@ console.log(ford)
  * })
  */
 function isEvenNumberAsync(number) {
-  // ✨ implement
+  const result = number % 2 === 0
+
+  if(result) {
+    return true
+  } else {
+    return false
+  }
 }
 
 module.exports = {
